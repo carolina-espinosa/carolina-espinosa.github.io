@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolina Espinosa – Data Analyst</title>
+<meta name="description" content="Portfolio of Carolina Espinosa, data analyst. SQL, Python and data visualization projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#101B34; --navy-2:#1B2A4A; --gold:#C9A45C; --gold-dark:#8A6A24;
+  --paper:#F4F6F9; --white:#fff; --text:#1D2536; --muted:#5A6578; --line:#DDE2EA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.65}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.2}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:Fraunces,Georgia,serif;font-size:1.25rem;color:var(--white);text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{color:#C8D0E0;text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--gold)}
+.icons{display:flex;gap:10px}
+.icon-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;color:var(--white);text-decoration:none;font-size:.9rem;transition:background .2s,border-color .2s}
+.icon-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.icon-btn svg{width:18px;height:18px;fill:currentColor}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--white);padding:96px 0}
+.hero .wrap{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin-bottom:12px}
+.hero .role{color:var(--gold);font-size:1.2rem;font-weight:500;margin-bottom:20px}
+.hero p{max-width:54ch;color:#C8D0E0;margin-bottom:32px}
+.monogram{width:210px;height:210px;border-radius:50%;border:3px solid var(--gold);display:grid;place-items:center;font-family:Fraunces,Georgia,serif;font-size:4rem;color:var(--gold);background:rgba(255,255,255,.04)}
+.monogram img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.btn{display:inline-block;padding:13px 26px;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid var(--gold);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-line{color:var(--white);margin-left:10px}
+.btn-line:hover{background:rgba(201,164,92,.15)}
+.btn-navy{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+/* Sections */
+section{padding:84px 0}
+section:nth-of-type(even){background:var(--white)}
+.title{font-size:2rem;margin-bottom:8px}
+.title::after{content:"";display:block;width:56px;height:3px;background:var(--gold);margin-top:12px}
+.lead{color:var(--muted);max-width:62ch;margin:18px 0 40px}
+.sub{font-size:1.3rem;margin:44px 0 20px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;margin-top:28px}
+.timeline{border-left:2px solid var(--line);padding-left:26px}
+.item{position:relative;margin-bottom:26px}
+.item::before{content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:3px solid var(--white)}
+.item h4{font-size:1.02rem}
+.item .when{font-size:.88rem;color:var(--gold-dark);font-weight:700}
+.item p{color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:.95rem}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:10px;padding:28px}
+section:nth-of-type(even) .card{background:var(--paper)}
+.card h3{font-size:1.2rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.96rem;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tags span{font-size:.8rem;padding:3px 10px;background:#E4E9F2;border-radius:6px;color:var(--navy-2);font-weight:500}
+.card a.more{color:var(--navy);font-weight:700;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
+.skill-card{border-top-color:var(--gold)}
+
+/* Contact */
+.contact{background:var(--navy)!important;color:var(--white);text-align:center}
+.contact .title::after{margin:12px auto 0}
+.contact .lead{color:#C8D0E0;margin:18px auto 32px}
+.contact .btn-gold{margin-right:6px}
+footer{background:#0B1326;color:#8C97AD;text-align:center;padding:22px;font-size:.88rem}
+
+@media (max-width:820px){
+  nav{display:none}
+  .hero{padding:64px 0}
+  .hero .wrap,.about-grid{grid-template-columns:1fr}
+  .monogram{display:none}
+  .icon-btn span{display:none}
+  .btn-line{margin:10px 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Carolina Espinosa</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Technical Skills</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <!-- CHANGE: your LinkedIn URL -->
+      <a class="icon-btn" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.84v1.57h.06c.54-1.01 1.84-2.07 3.79-2.07 4.05 0 4.81 2.67 4.81 6.14v5.86h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75Z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <!-- CHANGE: your email -->
+      <a class="icon-btn" href="mailto:your-email@example.com?subject=Hello%20from%20your%20portfolio" aria-label="Send me an email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4.5 7v.1L12 12.4 19.5 7.1V7L12 12.2Z"/></svg>
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Carolina Espinosa</h1>
+      <div class="role">Data Analyst</div>
+      <p>I turn operational data into clear answers. I work with SQL and Python to find patterns, optimize processes and support better decisions.</p>
+      <a class="btn btn-gold" href="#projects">View projects</a>
+      <a class="btn btn-line" href="#contact">Get in touch</a>
+    </div>
+    <!-- OPTIONAL: replace the initials with your photo: <img src="foto.jpg" alt="Carolina Espinosa"> -->
+    <div class="monogram" aria-hidden="true">CE</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="title">About me</h2>
+    <div class="about-grid">
+      <div>
+        <p>Write 3 or 4 lines here: who you are, what kind of problems you enjoy solving and what role you are looking for. I come from an Order to Cash operations background and I am moving into data analysis, driven by problem solving, process optimization and pattern recognition.</p>
+        <p style="margin-top:14px">Replace this text with your own story.</p>
+        <p style="margin-top:28px">
+          <!-- Upload your CV to the repository with the name cv.pdf -->
+          <a class="btn btn-navy" href="cv.pdf" download>Download my CV</a>
+        </p>
+
+        <h3 class="sub">Hobbies</h3>
+        <div class="chips">
+          <span class="chip">Travel</span>
+          <span class="chip">Learning languages</span>
+          <span class="chip">Add your own</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-top:0">Education &amp; Experience</h3>
+        <div class="timeline">
+          <div class="item">
+            <span class="when">Present</span>
+            <h4>Order to Cash Operations Analyst</h4>
+            <p>Company name. Describe one concrete result, ideally with a number.</p>
+          </div>
+          <div class="item">
+            <span class="when">Year</span>
+            <h4>SQL for Data Analysis Specialist, TripleTen</h4>
+            <p>Data analytics program with a SQL specialist badge.</p>
+          </div>
+          <div class="item">
+            <span class="when">Years</span>
+            <h4>Education degree in Spanish, English and French</h4>
+            <p>Plus business administration studies. DELF B2 (French), Aptis C1 (English), Goethe A1 (German).</p>
+          </div>
+          <div class="item">
+            <span class="when">Years</span>
+            <h4>Sales, administration, teaching and international customer service</h4>
+            <p>Au pair in Germany, volunteer in France and two Work and Travel programs in the U.S.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2 class="title">Projects</h2>
+    <p class="lead">Each project explains the problem, the data, the method and the result.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Sales funnel analysis</h3>
+        <p>Step-by-step conversion analysis in SQL, comparing a baseline against a simulated scenario to find where users drop off.</p>
+        <div class="tags"><span>SQL</span><span>CTEs</span><span>Funnel</span></div>
+        <a class="more" href="https://github.com/your-username/funnel-analysis" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+      <article class="card">
+        <h3>Cohort retention analysis</h3>
+        <p>Retention by monthly cohorts in SQL to show how long customers stay active after their first purchase.</p>
+        <div class="tags"><span>SQL</span><span>Cohorts</span><span>Retention</span></div>
+        <a class="more" href="https://github.com/your-username/retention-analysis" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+      <article class="card">
+        <h3>Feedback sentiment classifier</h3>
+        <p>Web app that reads a CSV of customer feedback and labels each comment as Positive, Negative, Neutral or Other.</p>
+        <div class="tags"><span>Python</span><span>NLP</span><span>Web app</span></div>
+        <a class="more" href="https://github.com/your-username/sentiment-app" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="title">Technical Skills</h2>
+    <p class="lead">The tools I use to collect, clean, analyze and present data.</p>
+    <div class="grid">
+      <div class="card skill-card">
+        <h3>Querying and programming</h3>
+        <div class="tags"><span>SQL</span><span>Python</span><span>Pandas</span></div>
+      </div>
+      <div class="card skill-card">
+        <h3>Visualization and reporting</h3>
+        <div class="tags"><span>Tableau</span><span>Power BI</span><span>Excel</span></div>
+      </div>
+      <div class="card skill-card">
+        <h3>Languages</h3>
+        <div class="tags"><span>Spanish (native)</span><span>English C1</span><span>French B2</span><span>German A1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <h2 class="title">Services</h2>
+    <p class="lead">How I can help your team or business.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Data analysis and reporting</h3>
+        <p>Cleaning, exploring and summarizing your data into clear findings you can act on.</p>
+      </div>
+      <div class="card">
+        <h3>SQL queries and dashboards</h3>
+        <p>Custom queries and visual dashboards that keep your key metrics up to date.</p>
+      </div>
+      <div class="card">
+        <h3>Process optimization</h3>
+        <p>Finding bottlenecks in operational workflows and measuring the impact of improvements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="title">Contact</h2>
+    <p class="lead">Have a role, a project or a question? Write to me and I will reply soon.</p>
+    <a class="btn btn-gold" href="mailto:your-email@example.com?subject=Hello%20from%20your%20portfolio">Send an email</a>
+    <a class="btn btn-line" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">Connect on LinkedIn</a>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; 2026 Carolina Espinosa. All rights reserved.</footer>
+
+</body>
+</html>
